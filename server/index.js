@@ -10,9 +10,13 @@ const app = express();
 // limit max request body size to 30mb
 app.use(bodyParser.json({ limit: "30mb", extended: true}));
 app.use(bodyParser.urlencoded({ limit: "30mb", extended: true}));
-app.use(cors()); // Enable all CORS requests
+app.use(cors()); // Enable all CORS requests, then specify routes below
 
-app.use('/posts', postRoutes); // Then specify routes
+app.use('/posts', postRoutes);
+
+app.use('/', function (req, res) {
+    res.status(501).send('Not Implemented');
+});
 
 // https://mongodb.com/cloud/atlas
 const CONNECTION_URL = 'mongodb+srv://blog:blog123@cluster0.qv7jz.mongodb.net/<dbname>?retryWrites=true&w=majority';

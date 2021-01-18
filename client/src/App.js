@@ -20,8 +20,8 @@ const App = () => {
     return(
         <Container maxidth="lg">
             <AppBar className={classes.appBar} position="static" color="inherit">
-                <Typography className={classes.heading} variant="h2" align="center">Posts</Typography>
-                <img className={classes.image} src={posts} alt="posts" height="80" />
+                <Typography className={classes.heading} variant="h2" align="center">LC Blog</Typography>
+                <img className={classes.image} src={posts} alt="posts" height="60" />
             </AppBar>
             <Grow in>
                 <Container>

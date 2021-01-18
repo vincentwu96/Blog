@@ -1,0 +1,2 @@
+# ignore dependencies for heroku
+node_modules

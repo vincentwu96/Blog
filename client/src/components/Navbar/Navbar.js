@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { AppBar, Avatar, Typography, Toolbar, Button } from '@material-ui/core';
 import useStyles from './styles';
@@ -6,7 +6,17 @@ import posts from '../../images/code.png';
 
 const Navbar = () => {
     const classes = useStyles();
-    const user = null; // temporary
+
+    // get user profile from reducer
+    const [user, setUser] = useState(JSON.parse(localStorage.getItem('profile')));
+
+    useEffect(() => {
+        const token = user?.token;
+        setUser(JSON.parse(localStorage.getItem('profile')));
+    }, []);
+
+    console.log(user);
+
     return (
         <AppBar className={classes.appBar} position="static" color="inherit">
             <div className={classes.brandContainer}>

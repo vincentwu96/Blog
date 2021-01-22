@@ -40,7 +40,7 @@ const Auth = () => {
                 type: 'AUTH',
                 data: {result, token}
             });
-            history.push('/'); // push to home
+            history.push('/'); // push to home after login
         } catch (error) {
             console.log(error);
         }
